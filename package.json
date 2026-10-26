@@ -1,0 +1,28 @@
+{
+  "name": "melody",
+  "version": "2.0.1",
+  "main": "index.js",
+  "author": "Remyz",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord-player": "^3.0.2",
+    "discord.js": "^12.2.0",
+    "discord.js-commando": "^0.10.0",
+    "ffmpeg-static": "^4.2.7",
+    "node-fetch": "^2.6.1",
+    "node-opus": "^0.3.2",
+    "snyk": "^1.439.1",
+    "test": "^0.6.0",
+    "ytdl-core": "^4.9.0",
+    "ytdl-core-new": "^1.1.2"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
+
