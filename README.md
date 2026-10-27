@@ -1,87 +1,46 @@
-> For the sanitized release setup, see [RELEASE-NOTES.md](RELEASE-NOTES.md). The historical instructions below are retained for attribution and context.
+# Melody
 
-# Music-bot
+A customized Discord music bot with queue management and event-driven playback controls, built as a learning project with discord-player.
 
-# youtube tutorial : https://youtu.be/JF6D12OxYNA
+**JavaScript · Discord.js v12 · Historical project (2021)**
 
-A complete code to download for a music bot. Using a module (discord-player) 🎧
+## Overview
 
-Looking for a code for a music bot ? This fully open source code is made for your project !
-Warning, this code uses the v12 of the discord.js module. Previous versions such as (11.5.1, 11.5.0 or other) will not be supported.
+- Play, pause, resume, skip, and stop commands.
+- Queue inspection, shuffling, looping, and volume controls.
+- Dedicated handlers for playback, search, and disconnect events.
 
-### ⚡ Installation
+## Code map
 
-Well, let's start by downloading the code.
-Go to the folder `config` then the file `config.json`.
-For the bot to be able to start, please complete the file with your credentials as follows :
+| Path | Responsibility |
+| --- | --- |
+| `commands/` | Playback and queue commands |
+| `events/` | Discord client events |
+| `player-events/` | Player lifecycle and search handling |
+| `config/` | Bot preferences, emoji, and audio filters |
 
-```js
-{
-    "game": "GAME",
-    "prefix": "PREFIX",
-    "token_bot": "TOKEN"
-}
+## Run locally
+
+Install the dependencies:
+
+```sh
+npm install
 ```
 
-Reminder :
+Set the required environment variables in your shell or hosting service:
 
-- `game`, the status of the bot.
-- `prefix`, the prefix that will be set to use the bot.
-- `token_bot`, the token of the bot available on the [Discord Developers](https://discordapp.com/developers/applications) section.
+| Variable | Purpose |
+| --- | --- |
+| `DISCORD_TOKEN` | Token for your own Discord bot |
 
-To customize the emojis go to the file `emojis.json`.
-Emojis are already defined by default but you can modify them if you wish.
+Start the bot with `npm start`. The blank [`.env.example`](.env.example) lists the required names; this copy does not automatically load a `.env` file. Non-secret bot preferences live in [`config/`](config/).
 
-```js
-{
-    "music": ":musical_note:",
-    "queue": ":bar_chart:",
-    "error": ":x:",
-    "success": ":white_check_mark:"
-}
-```
+## Project history and current status
 
-In the console, type `npm install` to install all dependencies.
+The original repository contains development commits from **2021**. This public repository is a sanitized source snapshot published in 2026; it does not import or backdate the private Git history.
 
-To start the bot :
+This code uses legacy Discord.js APIs. The release preparation checked JavaScript syntax, JSON configuration, environment-variable guards, and embedded credential patterns. It has not been tested as a running bot against the current Discord API. It is presented as historical learning and customization work, rather than a maintained production template.
 
-```
-#With Node
-node index.js
+## Attribution
 
-#With pm2
-pm2 start index.js --name "MusicBot"
-```
-
-All you have to do is turn on your bot !
-
-### 🎵 Music commands
-
-```
-play <name>, play music in a voice channel.
-pause, pause the current music.
-resume, puts the current music back on. 
-queue, see the next musics.
-clear-queue, delete the next music.
-shuffle, to mix the queue.
-np, see music in progress.
-loop, to enable or disable the repeat function.
-volume <1 - 100>, change the volume.
-skip, skip to next music.
-stop, stop all music.
-
-```
-
-### 💡 General commands
-
-```
-help, see the list of available orders.
-ping, see the bot latency.
-```
-
-### 🏓 Utilities (to change the code)
-
-Find all the functions available on the official code [right here](https://github.com/Androz2091/discord-player).
-
-This is used with [discord.js](https://www.npmjs.com/package/discord.js) and [discord-player](https://www.npmjs.com/package/discord-player).
-
+Existing source credits remain intact. See [ATTRIBUTION.md](ATTRIBUTION.md) and [RELEASE-NOTES.md](RELEASE-NOTES.md) for provenance and license details. The [original tutorial README](docs/ORIGINAL-README.md) is also preserved.
